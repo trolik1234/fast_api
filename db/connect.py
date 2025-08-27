@@ -1,11 +1,11 @@
-import os
+
 
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
-from dotenv import load_dotenv
 
-load_dotenv()
-DATABASE_URL = os.getenv("DATABASE_URL")
+
+
+DATABASE_URL = "sqlite+aiosqlite:///./trolik.db"
 
 engine = create_async_engine(DATABASE_URL, echo=False)
 
